@@ -3,19 +3,34 @@ var sec = 0;
 var fSec = 0;
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
-setInterval(() => {
-	if (sec < 9) {
-		seconds.innerHTML = '0' + ++sec;
+var fractionSec = document.querySelector('#fSec');
+var stopWatch = setInterval(() => {
+	if (fSec < 9) {
+		fractionSec.innerHTML = '0' + ++fSec;
 	} else {
-		seconds.innerHTML = ++sec;
+		fractionSec.innerHTML = ++fSec;
 	}
-	if (sec > 59) {
-		seconds.innerHTML = '00';
-		sec = 0;
-		if (min < 9) {
-			minutes.innerHTML = '0' + ++min + ':';
+	if (fSec > 99) {
+		fSec = 0;
+		if (sec < 9) {
+			seconds.innerHTML = '0' + ++sec;
 		} else {
-			minutes.innerHTML = ++min + ':';
+			seconds.innerHTML = ++sec;
+		}
+		if (sec > 59) {
+			seconds.innerHTML = '00';
+			sec = 0;
+			if (min < 9) {
+				minutes.innerHTML = '0' + ++min + ':';
+			} else {
+				minutes.innerHTML = ++min + ':';
+			}
 		}
 	}
-}, 1000);
+}, 10);
+
+addEventListener('keypress', (e) =>{
+	if(e.which == 13){
+		clearInterval(stopWatch);
+	  }
+}, false)
