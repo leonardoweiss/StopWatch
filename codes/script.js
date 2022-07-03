@@ -1,5 +1,6 @@
 var min = 0;
 var sec = 0;
+var fSec = 0;
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
 setInterval(() => {
@@ -8,4 +9,13 @@ setInterval(() => {
 	} else {
 		seconds.innerHTML = ++sec;
 	}
-}, 1000)
+	if (sec > 59) {
+		seconds.innerHTML = '00';
+		sec = 0;
+		if (min < 9) {
+			minutes.innerHTML = '0' + ++min + ':';
+		} else {
+			minutes.innerHTML = ++min + ':';
+		}
+	}
+}, 1000);
