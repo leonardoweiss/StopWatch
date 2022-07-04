@@ -1,28 +1,26 @@
 var min = 0;
 var sec = 0;
 var fSec = 0;
+
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
 var fractionSec = document.querySelector('#fSec');
 
+var button = document.querySelector('#start');
+var stop = document.querySelector('#zerar');
+
+var condition = true;
+
 var stopWatch;
 
-addEventListener('keypress', (enter) =>{
-	if(enter.which == 13){
-		clearInterval(stopWatch);
-	  }
-}, false);
+stop.addEventListener('click', () =>{
+	clearInterval(stopWatch);
+	min = 0; sec = 0; fSec = 0;
+	fractionSec.innerHTML = '00'; seconds.innerHTML = '00'; minutes.innerHTML = '00';
+});
 
-addEventListener('keypress', (p) =>{
-	if(p.which == 112){
-		clearInterval(stopWatch);
-		min = 0; sec = 0; fSec = 0;
-		fractionSec.innerHTML = '00'; seconds.innerHTML = '00'; minutes.innerHTML = '00';
-	  }
-}, false);
-
-addEventListener('keypress', (space) =>{
-	if(space.which == 32){
+button.addEventListener('click', () =>{
+	if(condition){
 		stopWatch = setInterval(() => {
 			if (fSec < 9) {
 				fractionSec.innerHTML = '0' + ++fSec;
@@ -30,6 +28,7 @@ addEventListener('keypress', (space) =>{
 				fractionSec.innerHTML = ++fSec;
 			}
 			if (fSec > 99) {
+				fractionSec.innerHTML = '00'
 				fSec = 0;
 				if (sec < 9) {
 					seconds.innerHTML = '0' + ++sec;
@@ -40,12 +39,16 @@ addEventListener('keypress', (space) =>{
 					seconds.innerHTML = '00';
 					sec = 0;
 					if (min < 9) {
-						minutes.innerHTML = '0' + ++min + ':';
+						minutes.innerHTML = '0' + ++min;
 					} else {
-						minutes.innerHTML = ++min + ':';
+						minutes.innerHTML = ++min;
 					}
 				}
 			}
 		}, 10);
+		condition = false;
+	  } else {
+		clearInterval(stopWatch);
+		condition = true;
 	  }
-}, false);
+});

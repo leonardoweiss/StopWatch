@@ -3,20 +3,53 @@
     padding: 0;
 }
 
-body{
-    font-family: 'Nunito', sans-serif; 
-    text-align: center;
+:root{
+--color1: #9FD86B;
+--color2: #53ba83;
+--color3: #059b9a;
+--color4: #095169;
+--color5: #0c0636;
 }
 
-span{
-    display: inline-block; 
+@font-face {
+    font-family: "Digital Clock";
+    src: url("font/DS-Digital-Italic.woff");
+}
+
+body{ 
+    text-align: center;
+    background-color: var(--color5);
+}
+
+.numbers{
+    display: inline-block;
     margin-top: 15.5rem;
-    font-size: 2.5rem;
-    width: 3.25rem;
+    font-size: 6rem;
+    width: 6.25rem;
+    font-family: "Digital Clock";
+    color: var(--color2);
 }
 
 #fSec{
-    font-size: 1.5rem;
-    width: 1.5rem;
+    font-size: 3.45rem;
+    width: 3.7rem;
     text-align: left;
+}
+
+#instructions{
+    text-align: center;
+    margin-top: 25px;
+}
+
+#instructions .buttons{
+    display: inline-block;
+    margin: 5px 15px;
+    border-radius: 3px;
+    background-color: dodgerblue;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 1.15rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
 }
