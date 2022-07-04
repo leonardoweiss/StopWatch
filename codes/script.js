@@ -13,12 +13,6 @@ var condition = true;
 
 var stopWatch;
 
-stop.addEventListener('click', () =>{
-	clearInterval(stopWatch);
-	min = 0; sec = 0; fSec = 0;
-	fractionSec.innerHTML = '00'; seconds.innerHTML = '00'; minutes.innerHTML = '00';
-});
-
 button.addEventListener('click', () =>{
 	if(condition){
 		stopWatch = setInterval(() => {
@@ -47,8 +41,24 @@ button.addEventListener('click', () =>{
 			}
 		}, 10);
 		condition = false;
+		button.innerHTML = 'PAUSE';
 	  } else {
 		clearInterval(stopWatch);
 		condition = true;
+		button.innerHTML = 'START';
 	  }
+});
+
+stop.addEventListener('click', () =>{
+	clearInterval(stopWatch);
+	
+	min = 0; 
+	sec = 0; 
+	fSec = 0;
+	
+	fractionSec.innerHTML = '00'; 
+	seconds.innerHTML = '00'; 
+	minutes.innerHTML = '00';
+	
+	button.innerHTML = 'START';
 });
