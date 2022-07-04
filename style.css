@@ -1,0 +1,93 @@
+*{
+    margin: 0; 
+    padding: 0;
+}
+
+:root{
+--color1: #9FD86B;
+--color2: #53ba83;
+--color3: #059b9a;
+--color4: #095169;
+--color5: #0c0636;
+}
+
+@font-face {
+    font-family: "Digital Clock";
+    src: url("font/DS-Digital-Italic.woff");
+}
+
+body{ 
+    text-align: center;
+    background-color: var(--color5);
+}
+
+header{
+    margin-top: 40px;;
+}
+
+header h1{
+    font-family: 'Digital Clock';
+    font-size: 4.5rem;
+    color: var(--color3);
+    letter-spacing: 4px;
+    font-weight: normal;
+}
+
+#screen{
+    margin: 3rem auto 0 auto;
+    border: 2px solid var(--color3);
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.numbers{
+    display: inline-block;
+    font-size: 6rem;
+    width: 6.25rem;
+    align-self: center;
+    font-family: "Digital Clock";
+    color: var(--color1);
+}
+
+#fSec{
+    font-size: 3.45rem;
+    width: 3.7rem;
+    text-align: left;
+}
+
+#instructions{
+    text-align: center;
+    margin-top: 25px;
+}
+
+#instructions .buttons{
+    display: inline-block;
+    margin: 5px 15px;
+    border-radius: 3px;
+    background-color: var(--color4);
+    color: var(--color2);
+    padding: 5px 10px;
+    font-size: 1.15rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    width: 95px;;
+}
+
+#instructions .buttons:hover{
+    color: var(--color1);
+}
+
+footer{
+    /*font-family: 'Digital Clock';*/
+    margin-top: 22px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--color2);
+}
+
+footer a{
+    color: var(--color2);
+}
