@@ -27,10 +27,21 @@
             <div id="container">
                 <div id="empty"></div>
                 <section>
-                    <div id="screen">
-                        <span id="minutes" class="numbers">00</span>
-                        <span id="seconds" class="numbers">00</span>
-                        <span id="fSec" class="numbers">00</span>
+                    <div id="screen"> 
+                    	<div id="most">
+                    		<button class="countdown m1" onclick="most('min')">+</button>
+                    		<button class="countdown m2" onclick="most('sec')">+</button>
+                    	</div>             
+                        <div>
+                        	<span id="minutes" class="numbers">00</span>
+	                        <span id="seconds" class="numbers">00</span>
+	                        <span id="fSec" class="numbers">00</span>
+                        </div>
+                        <div id="less">
+                    		<button class="countdown l1" onclick="less('min')">-</button>
+                    		<button class="countdown l2" onclick="less('sec')">-</button>
+                    	</div>
+                        <button type="button" id="countdown">COUNTDOWN</button>
                     </div>
                     <div id="instructions">
                         <button type="button" id="start" class="buttons">START</button>
@@ -38,7 +49,7 @@
                     </div>
                 </section>
                 <aside id="aside">
-                    <h2>Histórico</h2>
+                    <h2>Historic</h2>
                     <ol id="historic">
                         <div id="list"></div>
                     </ol>

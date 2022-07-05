@@ -55,9 +55,9 @@ li{
     color: var(--color2);
 }
 
-#clear{
+#clear, #countdown, .countdown{
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 3px;
     background-color: var(--color4);
     color: var(--color2);
@@ -68,6 +68,20 @@ li{
     font-family: 'Nunito', sans-serif;
 }
 
+.countdown{
+	margin: 0 32px; 
+}
+
+#less{
+	margin-bottom: 10px;
+}
+
+#less, #most{
+	visibility: hidden;
+	text-align: left;
+	margin-left: 40px;
+}
+
 #screen{
     margin: 3rem auto 0 auto;
     border: 2px solid var(--color3);
@@ -76,6 +90,7 @@ li{
     border-radius: 50%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .numbers{
@@ -109,7 +124,7 @@ li{
     border: none;
     cursor: pointer;
     font-family: 'Nunito', sans-serif;
-    width: 95px;
+    width: 105px;
 }
 
 #instructions .buttons:hover, #clear:hover{
@@ -127,8 +142,20 @@ footer a{
     color: var(--color2);
 }
 
+#countdown{
+	height: fit-content;
+	width: fit-content;
+	margin: 0 auto;
+}
+
 @media screen and (max-width: 600px){
     #container{
         flex-direction: column;
+    }
+
+    #aside{
+    	margin-top: 20px;
+    	padding-top: 20px;
+    	border-top: 1px solid var(--color2);
     }
 }
