@@ -21,16 +21,28 @@
         
         <body>
             <header>
-                <h1>CR0N0METR0</h1>
+                <h1>ST0PWATCH</h1>
             </header>
-            <div id="screen">
-                <span id="minutes" class="numbers">00</span>
-                <span id="seconds" class="numbers">00</span>
-                <span id="fSec" class="numbers">00</span>
-            </div>
-            <div id="instructions">
-                <button type="button" id="start" class="buttons">START</button>
-                <button type="button" id="zerar" class="buttons">ZERAR</button>
+            <div id="container">
+                <div id="empty"></div>
+                <section>
+                    <div id="screen">
+                        <span id="minutes" class="numbers">00</span>
+                        <span id="seconds" class="numbers">00</span>
+                        <span id="fSec" class="numbers">00</span>
+                    </div>
+                    <div id="instructions">
+                        <button type="button" id="start" class="buttons">START</button>
+                        <button type="button" id="zerar" class="buttons">RESET</button>
+                    </div>
+                </section>
+                <aside id="aside">
+                    <h2>Histórico</h2>
+                    <ol id="historic">
+                        
+                    </ol>
+                    <button type="button" id="clear">Clear Historic</button>
+                </aside>
             </div>
             <footer>Developed by <a href="https://github.com/leonardoweiss" target="_blank">Leonardo Weiss</a></footer>
         </body>

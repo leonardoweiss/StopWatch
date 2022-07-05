@@ -33,6 +33,41 @@ header h1{
     font-weight: normal;
 }
 
+#container{
+    display: flex;
+    justify-content: space-around;
+}
+
+#aside, #empty{
+    width: 20rem;
+    align-self: center;
+    font-family: 'Nunito', sans-serif;
+    color: var(--color1);
+}
+
+#aside h2{
+    margin-bottom: 12px;
+}
+
+li{
+    width: 10rem;
+    margin: 0 auto;
+    color: var(--color2);
+}
+
+#clear{
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 3px;
+    background-color: var(--color4);
+    color: var(--color2);
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+}
+
 #screen{
     margin: 3rem auto 0 auto;
     border: 2px solid var(--color3);
@@ -74,10 +109,10 @@ header h1{
     border: none;
     cursor: pointer;
     font-family: 'Nunito', sans-serif;
-    width: 95px;;
+    width: 95px;
 }
 
-#instructions .buttons:hover{
+#instructions .buttons:hover, #clear:hover{
     color: var(--color1);
 }
 

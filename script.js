@@ -5,6 +5,8 @@ var fSec = 0;
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
 var fractionSec = document.querySelector('#fSec');
+var historic = document.querySelector('#historic');
+var clear = document.querySelector('#clear');
 
 var button = document.querySelector('#start');
 var stop = document.querySelector('#zerar');
@@ -46,6 +48,10 @@ button.addEventListener('click', () =>{
 		clearInterval(stopWatch);
 		condition = true;
 		button.innerHTML = 'START';
+		var li = document.createElement('li');
+		var content = document.createTextNode(minutes.innerHTML + ':' + seconds.innerHTML + ':' + fractionSec.innerHTML);
+		li.appendChild(content);
+		historic.appendChild(li);
 	  }
 });
 
@@ -62,3 +68,8 @@ stop.addEventListener('click', () =>{
 	
 	button.innerHTML = 'START';
 });
+
+clear.addEventListener('click', () => {
+	let li = document.querySelector('li');
+	historic.removeChild(li);
+})
