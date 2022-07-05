@@ -7,7 +7,6 @@ var seconds = document.querySelector('#seconds');
 var fractionSec = document.querySelector('#fSec');
 var historic = document.querySelector('#historic');
 var clear = document.querySelector('#clear');
-var list = document.querySelector('#list');
 
 var button = document.querySelector('#start');
 var stop = document.querySelector('#zerar');
@@ -17,6 +16,7 @@ var condition = true;
 var stopWatch;
 
 clear.addEventListener('click', () => {
+	var list = document.querySelector('#list');
 	let newList = document.createElement('div');
 	newList.id = 'list';
 	historic.removeChild(list);
