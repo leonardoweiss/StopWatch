@@ -69,7 +69,9 @@ li{
 }
 
 .countdown{
-	margin: 0 32px; 
+	margin: 0 32px;
+    box-shadow: 2px 2px 3px #000;
+    width: 32px;
 }
 
 #less{
