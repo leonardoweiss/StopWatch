@@ -45,7 +45,7 @@ header h1{
     color: var(--color1);
 }
 
-#aside h2{
+#aside h2, #empty h2{
     margin-bottom: 12px;
 }
 
@@ -55,7 +55,7 @@ li{
     color: var(--color2);
 }
 
-#clear, #countdown, .countdown{
+#clear, #countdown, .countdown, #clearDown{
     display: inline-block;
     margin-top: 10px;
     border-radius: 3px;

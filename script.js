@@ -1,22 +1,27 @@
+//variaveis numericas
 var min = 0;
 var sec = 0;
 var fSec = 0;
-
+//variaveis para relogio
 var minutes = document.querySelector('#minutes');
 var seconds = document.querySelector('#seconds');
 var fractionSec = document.querySelector('#fSec');
+//variaveis para o historico
 var historic = document.querySelector('#historic');
+var historicDown = document.querySelector('#historicDown');
 var clear = document.querySelector('#clear');
-
+var clearDown = document.querySelector('#clearDown');
+//variaveis para botoes
 var button = document.querySelector('#start');
 var stop = document.querySelector('#zerar');
 var countdown = document.querySelector('#countdown');
-
+//variaveis booleans
 var condition = true;
 var countdownInit = false;
-
+//variavel para setInterval
 var stopWatch;
 
+//funcao limpar historico
 clear.addEventListener('click', () => {
 	let list = document.querySelector('#list');
 	let newList = document.createElement('div');
@@ -25,7 +30,16 @@ clear.addEventListener('click', () => {
 	historic.appendChild(newList);
 });
 
-countdown.addEventListener('click', () => {
+clearDown.addEventListener('click', () => {
+	let list = document.querySelector('#listDown');
+	let newList = document.createElement('div');
+	newList.id = 'listDown';
+	historicDown.removeChild(list);
+	historicDown.appendChild(newList);
+});
+
+//funcao mostrar botoes 'less' e 'most'
+ countdown.addEventListener('click', () => {
 	if (countdownInit) {
 		document.querySelector('#most').style.visibility = 'hidden';
 		document.querySelector('#less').style.visibility = 'hidden';
@@ -37,6 +51,7 @@ countdown.addEventListener('click', () => {
 	}
 });
 
+//funcoes para adicionar e subtrair no relogio
 function most(time) {
 	if (time == 'sec') {
 		if (sec < 9) {
@@ -89,6 +104,7 @@ function less(time) {
 	}
 }
 
+//funcao start e pause / adicionar historico / tanto para cronometro, quanto countdown
 button.addEventListener('click', () =>{
 	if(condition){
 		if (!countdownInit) {
@@ -116,6 +132,7 @@ button.addEventListener('click', () =>{
 						}
 					}
 				}
+				countdown.style.visibility = 'hidden';
 			}, 10);
 		} else {
 			stopWatch = setInterval(() => {
@@ -166,7 +183,14 @@ button.addEventListener('click', () =>{
 			let content = document.createTextNode(minutes.innerHTML + ':' + seconds.innerHTML + ':' + fractionSec.innerHTML);
 			li.appendChild(content);
 			document.querySelector('#list').appendChild(li);
+
+			countdown.style.visibility = 'visible';
 		} else {
+			let li = document.createElement('li');
+			let content = document.createTextNode(minutes.innerHTML + ':' + seconds.innerHTML + ':' + fractionSec.innerHTML);
+			li.appendChild(content);
+			document.querySelector('#listDown').appendChild(li);
+
 			document.querySelector('#most').style.visibility = 'visible';
 			document.querySelector('#less').style.visibility = 'visible';
 		}
@@ -175,6 +199,7 @@ button.addEventListener('click', () =>{
 	}
 });
 
+//funcao para resetar
 stop.addEventListener('click', () =>{
 	clearInterval(stopWatch);
 	
