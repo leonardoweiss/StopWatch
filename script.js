@@ -167,6 +167,8 @@ button.addEventListener('click', () =>{
 					clearInterval(stopWatch);
 					button.innerHTML = 'RESTART';
 					document.body.style.backgroundColor = '#000';
+					const audio = new Audio('song/music.mp3');
+					audio.play();
 				}
 			}, 10);
 		}
