@@ -39,7 +39,7 @@ clearDown.addEventListener('click', () => {
 });
 
 //funcao mostrar botoes 'less' e 'most'
- countdown.addEventListener('click', () => {
+countdown.addEventListener('click', () => {
 	if (countdownInit) {
 		document.querySelector('#most').style.visibility = 'hidden';
 		document.querySelector('#less').style.visibility = 'hidden';
@@ -52,7 +52,7 @@ clearDown.addEventListener('click', () => {
 });
 
 //funcoes para adicionar e subtrair no relogio
-function most(time) {
+var most = (time) => {
 	if (time == 'sec') {
 		if (sec < 9) {
 			seconds.innerHTML = '0' + ++sec;
@@ -79,8 +79,7 @@ function most(time) {
 		}
 	}
 }
-
-function less(time) {
+var less = (time) => {
 	if (time == 'sec') {
 		if (sec < 9) {
 			seconds.innerHTML = '0' + --sec;
